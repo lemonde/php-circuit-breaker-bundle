@@ -2,9 +2,9 @@
 
 namespace CircuitBreakerBundle\Service;
 
-use Symfony\Component\Cache\Adapter\AbstractAdapter;
-use Psr\Log\LoggerTrait as PsrLoggerTrait;
 use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerTrait as PsrLoggerTrait;
+use Symfony\Component\Cache\Adapter\AbstractAdapter;
 
 class CircuitBreakerService
 {
