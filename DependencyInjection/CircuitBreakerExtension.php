@@ -23,7 +23,9 @@ class CircuitBreakerExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $container->setParameter('circuit_breaker.timeout', $config['timeout']);
+        $container->setParameter('circuit_breaker.threshold', $config['threshold']);
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources'));
         $loader->load('services.yml');
     }
 
@@ -32,6 +34,6 @@ class CircuitBreakerExtension extends Extension
      */
     public function getAlias()
     {
-        return 'circtui_breaker';
+        return 'circuit_breaker';
     }
 }

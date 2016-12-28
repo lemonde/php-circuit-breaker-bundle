@@ -1,7 +1,7 @@
 services:
     circuit.breaker:
         class: CircuitBreakerBundle\Service\CircuitBreakerService
-        arguments: ['@cache.app', '%threshold%', '%timeout%']
+        arguments: ['@cache.app', '%circuit_breaker.threshold%', '%circuit_breaker.timeout%']
         calls:
             - [setLogger, ['@logger']]
 
