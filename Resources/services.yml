@@ -1,0 +1,12 @@
+services:
+    circuit.breaker:
+        class: CircuitBreakerBundle\Service\CircuitBreakerService
+        arguments: ['@cache.app', '%threshold%', '%timeout%']
+        calls:
+            - [setLogger, ['@logger']]
+
+    circuit.breaker.listener:
+        class: CircuitBreakerBundle\Listener\CircuitBreakerListener
+        arguments: ['@circuit.breaker']
+        tags:
+            - { name: kernel.event_listener, event: circuit.breaker, method: onCircuitBreaker, priority: 1  }

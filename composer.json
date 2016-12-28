@@ -1,0 +1,24 @@
+{
+    "name": "lemonde/php-circuit-breaker-bundle",
+    "description": "Circuit breaker to symfony",
+    "autoload": {
+        "psr-4": { "CircuitBreakerBundle\\": "" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Tests\\": "tests/" }
+    },
+    "type": "bundle",
+    "require": {
+        "php": ">=7",
+        "symfony/http-kernel": "~3.0",
+        "symfony/config": "~3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "license": "MIT",
+    "minimum-stability": "stable"
+}
