@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace CircuitBreakerBundle\Service;
 
@@ -48,7 +48,7 @@ class CircuitBreakerService
 
     /**
      * @param string $key The service key
-     * @param string $status The service status (true: up, false: down)
+     * @param bool $status The service status (true: up, false: down)
      */
     public function save(string $key, bool $status)
     {
