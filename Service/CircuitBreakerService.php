@@ -82,7 +82,7 @@ class CircuitBreakerService
             $this->status[$service] = self::OPEN;
         }
 
-        return $this->status[$service] === self::OPEN;
+        return isset($this->status[$service]) && $this->status[$service] === self::OPEN;
     }
 
     /**
