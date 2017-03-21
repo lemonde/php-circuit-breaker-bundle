@@ -14,6 +14,9 @@ class CircuitBreakerService
     const CLOSED = 'closed';
     const HALFOPEN = 'half-open';
 
+    const STATUS_UP = true;
+    const STATUS_DOWN = false;
+
     /**
      * @var AbstractAdapter
      */
