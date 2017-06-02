@@ -8,7 +8,7 @@ class CircuitBreakerServiceTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->mockCacheApp = $this->getMockBuilder('Symfony\Component\Cache\Adapter\AbstractAdapter')
+        $this->mockCacheApp = $this->getMockBuilder('Symfony\Component\Cache\Adapter\AdapterInterface')
             ->disableOriginalConstructor()
             ->setMethods(['getItem', 'save', 'doHave', 'doFetch', 'doClear', 'doSave', 'doDelete'])
             ->getMock();
