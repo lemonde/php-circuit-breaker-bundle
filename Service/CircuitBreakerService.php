@@ -4,7 +4,7 @@ namespace CircuitBreakerBundle\Service;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait as PsrLoggerTrait;
-use Symfony\Component\Cache\Adapter\AbstractAdapter;
+use Symfony\Component\Cache\Adapter\AdapterInterface;
 
 class CircuitBreakerService
 {
@@ -18,7 +18,7 @@ class CircuitBreakerService
     const STATUS_DOWN = false;
 
     /**
-     * @var AbstractAdapter
+     * @var AdapterInterface
      */
     private $cacheApp;
 
@@ -38,11 +38,11 @@ class CircuitBreakerService
     private $timeout;
 
     /**
-     * @param AbstractAdapter $cacheApp
+     * @param AdapterInterface $cacheApp
      * @param int $threshold
      * @param int $timeout
      */
-    public function __construct(AbstractAdapter $cacheApp, int $threshold, int $timeout)
+    public function __construct(AdapterInterface $cacheApp, int $threshold, int $timeout)
     {
         $this->cacheApp = $cacheApp;
         $this->threshold = $threshold;
